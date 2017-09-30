@@ -9,7 +9,7 @@ public class Calendar {
 		int b = scanner.nextInt();
 		int result = a+b;
 		System.out.println("두 수의 합은 "+result+" 입니다.");
-		
+		scanner.close();
 	}
 
 }
