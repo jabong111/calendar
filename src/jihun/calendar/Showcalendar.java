@@ -2,11 +2,12 @@ package jihun.calendar;
 import java.util.Scanner;
 
 public class Showcalendar {
-	public void printcal(int month) {
+	public void printcal(int month, int year) {
 		Month getmonth = new Month();
 		System.out.println(" 일  월  화  수  목  금  토");
 		System.out.println("----------------");
-		int maxday = getmonth.maxdays(month);
+		int maxday = getmonth.maxdays(month, year);
+		
 		
 		for(int i=1;i <= maxday; i++) {
 			System.out.printf("%3d",i);
@@ -28,16 +29,21 @@ public class Showcalendar {
 		Showcalendar showcalendar = new Showcalendar();
 		
 		while(true) {
+			System.out.println("년을 입력하세요");
+			System.out.print(">");
+			int year = scanner.nextInt();
+			
 			System.out.println("달을 입력하세요.");
 			System.out.print(">");
 			int month = scanner.nextInt();
-			if(month == -1) {
+			
+			if(month == -1 || year == -1) {
 				break;
 			}
 			else if(month > 12) {
 				continue;
 			}
-			showcalendar.printcal(month);
+			showcalendar.printcal(month, year);
 			
 		}
 		System.out.println("Bye~");
