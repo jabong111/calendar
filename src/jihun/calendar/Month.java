@@ -9,14 +9,20 @@ public class Month {
 		return days[month-1]; 
 	}
 	public static void main(String[] args) {
+		String PROMPT = ">";
 		Month maxmonth = new Month();
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("반복횟수를 입력하세여");
-		int num = scanner.nextInt();
 		
-		for(int i=0;i<num;i++) {
+		while(true){
 			System.out.println("달을 입력하세요");
+			System.out.print(PROMPT);
 			int month = scanner.nextInt();
+			if(month == -1) {
+				break;
+			}
+			else if(month > 12) {
+				continue;
+			}
 			System.out.println(month+"월은 "+maxmonth.maxdays(month)+"까지 있습니다.");
 			
 		}
